@@ -24,6 +24,18 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:200,400,700');
 
+.expand {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
 /* Table of contents */
 .progress ul {
   list-style: none;
@@ -292,7 +304,8 @@ h4 {
   margin: 1.5rem 0 0.75rem 0; }
 
 h5 {
-  font-size: 0.5rem;
+  font-size: 1rem;
+  color: #515151 !important;
   line-height: 110% !important;
   margin: 1rem 0 0.2rem 0; }
 
