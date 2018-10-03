@@ -17,11 +17,30 @@
 </header>
 <article>
   <aside>
+    {{- if not .Site.Params.disableSearch}}
+    <div>
+      <div class="searchbox">
+        <input data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
+      </div>
+      <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
+      <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
+      <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
+      <script type="text/javascript">
+        {{ if .Site.IsMultiLingual }}
+            var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
+        {{ else }}
+            var baseurl = "{{.Site.BaseURL}}";
+        {{ end }}
+      </script>
+      <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
+    </div>
+    {{- end}}
+
     <ul class="menu">
       {{- if not .Site.Params.disableHomeIcon}}
           <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
           <a href="{{"/" | relLangURL}}">
-            <i class="fa fa-fw fa-home"></i>
+            Home
           </a>
           </li>
       {{- end}}
@@ -31,6 +50,7 @@
     </ul>
 
     {{- partial "language-selector.html" . }}
+
     <section>
         {{- partial "menu-footer.html" . }}
     </section>
@@ -45,24 +65,55 @@
       </center>
     </div>
 
-    {{- if not .Site.Params.disableSearch}}
-      <div>
-        <div class="searchbox">
-          <input data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
+    {{if not .IsHome}}
+      <div id="top-bar">
+        {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
+          {{ $File := .File }}
+          {{ $Site := .Site }}
+          {{with $File.Path }}
+        <div id="top-github-link">
+          <a class="github-link" href="/contributing/" target="blank">
+            <i class="fa fa-info-circle"></i>
+            {{T "Contributing-guidelines"}}
+          </a>
+          <a class="github-link" href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
+            <i class="fa fa-code-fork"></i>
+            {{T "Edit-this-page"}}
+          </a>
         </div>
-        <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-        <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-        <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-        <script type="text/javascript">
-          {{ if .Site.IsMultiLingual }}
-              var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
-          {{ else }}
-              var baseurl = "{{.Site.BaseURL}}";
-          {{ end }}
-        </script>
-        <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
-      </div>
-    {{- end}}
+          {{- end }}
+        {{- end -}}
 
+        <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+            <span class="links">
+            {{ template "breadcrumb" dict "page" . "value" .Title }}
+            </span>
+        </div>
+
+        <!-- TOC -->
+        <div class="progress">
+            <div class="wrapper">
+        {{ .TableOfContents }}
+            </div>
+        </div>
+        <!-- /TOC -->
+
+      </div>
+    {{end}}
+
+    {{if .Params.tags }}
+      <div id="tags">
+        {{ range $index, $tag := .Params.tags }}
+          <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
+        {{ end }}
+      </div>
+    {{end}}
+    <div id="body-inner">
 
     {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
