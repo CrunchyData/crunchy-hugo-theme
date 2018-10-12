@@ -129,6 +129,11 @@ header nav.shortcuts li a label {
     padding: 0;
 }
 
+#body-inner article.post.development footer.footline,
+#body-inner article.post.development header.post-header {
+    display: none;
+}
+
 #body-inner header.post-header h2.post-title {
     margin-top: 0 !important;
     width: 20rem !important;
@@ -136,7 +141,8 @@ header nav.shortcuts li a label {
     margin-right: 2rem !important;
 }
 
-#body-inner article.post.releases {
+#body-inner article.post.releases,
+#body-inner article.post.development {
     border-bottom: 1px solid #eee;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
