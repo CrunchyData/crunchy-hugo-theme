@@ -37,6 +37,7 @@
     {{- end}}
 
     <ul class="menu">
+      <b>Navigation</b>
       {{- if not .Site.Params.disableHomeIcon}}
           <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
           <a href="{{"/" | relLangURL}}">
@@ -48,6 +49,10 @@
       {{- partial "menu.html" . }}
 
     </ul>
+
+    <hr>
+
+    {{- partial "toc.html" . -}}
 
     {{- partial "language-selector.html" . }}
 
@@ -95,14 +100,6 @@
             {{ template "breadcrumb" dict "page" . "value" .Title }}
             </span>
         </div>
-
-        <!-- TOC -->
-        <div class="progress">
-            <div class="wrapper">
-        {{ .TableOfContents }}
-            </div>
-        </div>
-        <!-- /TOC -->
 
       </div>
     {{end}}

@@ -28,6 +28,14 @@ h5 {
     color: #0167B3;
 }
 
+dt {
+    font-weight: 600;
+}
+
+dd {
+    padding: 0.5rem 0 0.5rem 2rem;
+}
+
 /* Article & Section */
 
 article {
@@ -38,12 +46,16 @@ article section.page {
     padding: 1rem 12rem;
 }
 
+article > aside {
+    width: 25rem !important;
+}
+
 article > aside .menu .dd-item.active > div * {
     border-bottom: none;
 }
 
 article section.page h1:first-of-type {
-    text-transform: capitalize;
+    text-transform: none;
     color: #0167B3;
     font-weight: 600;
     margin: 2.5rem 0 !important;
@@ -237,9 +249,72 @@ a.github-link {
     margin-right: 1rem !important;
 }
 
+.nav-select {
+    display: none;
+}
+
 @media only all and (max-width: 47.938em) {
     #sidebar-toggle-span {
         display: inline;
+    }
+}
+
+@media only all and (max-width: 1024px) {
+    article > aside {
+        width: 20rem !important;
+        padding-right: 1.5rem;
+    }
+
+    article section.page {
+        padding: 1rem 8rem;
+    }
+
+    article section.page h1:first-of-type, h1 {
+        font-size: 1.5rem !important;
+        line-height: initial;
+        margin: 1rem 0 !important;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    h5 {
+        font-size: 1.1rem;
+    }
+}
+
+@media only all and (max-width: 860px) {
+    a.baselink {
+        display: none;
+    }
+
+    article > aside {
+        display: none;
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    article section.page {
+        margin: 0 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    span#sidebar-toggle-span {
+        display: none !important;
+    }
+
+    .nav-select {
+        display: none !important;
     }
 }
 
@@ -283,6 +358,29 @@ select {
 }
 
 nav.pagination {
+    display: none;
+}
+
+aside b {
+    margin-bottom: 0;
+}
+
+aside hr {
+    margin: 0 2rem 1.5rem 2rem;
+}
+
+nav#TableOfContents, aside b {
+    font-size: 13px;
+    padding-right: 1.5rem;
+}
+
+nav#TableOfContents ul li, aside b {
+    list-style: none;
+    margin: 0.5rem 0px 0.5rem 20px;
+    padding-left: 1rem;
+}
+
+nav#TableOfContents ul li ul li ul {
     display: none;
 }
 
