@@ -110,3 +110,35 @@ hugo
 ```
 
 By default, this outputs to a documentation directory above the project directory name `docs/`. You can configure this to what makes sense for your project.
+
+# FAQ
+
+## Supported File Types
+
+By default, standalone Hugo supports HTML and Markdown formats (including Blackfriday and Mmark).
+
+Using external helpers, you can use Asciidoc, reStructuredText, or pandoc using files with the associated extensions. Hugo will call external commands using the relevant helper to generate the content.
+
+See more information regarding supported file types in Hugo [here](https://gohugo.io/content-management/formats/).
+
+## Printing and PDFs
+
+The CSS styles for this theme strip out unnecessary content such as the side bar and header when a page is printed.
+
+As such, PDFs can be printed either through opening the print dialog and selecting "Save as PDF", or via traditional command-line conversion methods. For example, if your source content is Markdown, pandoc offers a method of converting from Markdown to PDF, including a Table of Contents:
+
+```sh
+pandoc --toc --latex-engine=xelatex source_file dest_file
+```
+
+## Tagged Documentation
+
+The most straight-forward way to do this is through generating the documentation into different tagged folders into your source branch.
+
+For example, after using `git tag` to select the desired release,
+
+```sh
+hugo --source=$SOURCE --destination=$DESTINATION
+```
+
+An example of this using a [gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) branch can be found [here](https://github.com/CrunchyData/crunchy-containers/tree/gh-pages).
