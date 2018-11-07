@@ -22,7 +22,7 @@ There are a few ways to install the Crunchy Hugo Theme.
 
 ```sh
 cd themes
-git clone https://github.com/CrunchyData/crunchy-hugo-theme.git
+git clone https://github.com/CrunchyData/crunchy-hugo-theme.git themes/crunchy-hugo-theme
 ```
 
 ### Option 2: Download
@@ -32,6 +32,10 @@ Download from https://github.com/CrunchyData/crunchy-hugo-theme and place the ro
 ### Option 3: git submodule
 
 If you are working in a git project you can add the theme as a submodule:
+
+```sh
+git submodule add https://github.com/CrunchyData/crunchy-hugo-theme
+```
 
 ## Step 3: Configuration
 
@@ -113,6 +117,66 @@ By default, this outputs to a documentation directory above the project director
 
 # FAQ
 
+## Content Structure
+
+Hugo has a few explicit requirements when it comes to content structure.
+
+If you had a website structure similar to the following:
+
+```sh
+Home
+About
+- Meet the Team
+Location
+- Venue
+- Hotel
+Contact Us
+```
+Your Hugo content/ directory would need to resemble the following:
+
+```sh
+content/
+-- about/
+-------- meet-the-team.md
+-------- _index.md
+-- location/
+-------- venue.md
+-------- hotel.md
+-------- _index.md
+-- contact-us.md
+-- _index.md
+```
+
+Static singular side pages can reside in the root of the content/ folder. This would include the contact-us.md file. Any website directories that will contain sub-pages must have their own designated folders with \_index.md files defined as the root of that subdirectory.
+
+The \_index.md file itself at the root of /content is the homepage for the website; it must follow that naming convention for Hugo to recognize it.
+
+It's possible to define characteristics for each of these pages, such as their weight (to define their order), their website titles, whether or not they should be displayed on the side navigation pane, and so on. This is done using [front matter](https://gohugo.io/content-management/front-matter/).
+
+An example of this would be the following segment of front matter for `about/_index.md`:
+
+```sh
+title: 'About Us'
+weight: 1
+draft: false
+```
+
+That segment of code would do the following:
+- set the website title to "About Us", as well as the name on the side navigation bar for the subdirectory
+- list "About Us" as being the first element on the side navigation
+- tells Hugo that the page is not a draft, and it can be published
+
+If for some reason a specific page should be excluded from the side navigation, you can add the following to the parameters:
+
+```sh
+hidden: true
+```
+
+More information on related topics:
+- [Directory Structure](https://gohugo.io/getting-started/directory-structure/)
+- [Content Management](https://gohugo.io/content-management/)
+- [Hugo's Directory Structure Explained](https://www.jakewiesler.com/blog/hugo-directory-structure/)
+
 ## Supported File Types
 
 By default, standalone Hugo supports HTML and Markdown formats (including Blackfriday and Mmark).
@@ -141,4 +205,4 @@ For example, after using `git tag` to select the desired release,
 hugo --source=$SOURCE --destination=$DESTINATION
 ```
 
-An example of this using a [gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) branch can be found [here](https://github.com/CrunchyData/crunchy-containers/tree/gh-pages).
+An example of this using a [gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) branch can be found [here](https://github.com/CrunchyData/crunchy-containers/tree/gh-pages). More information on the publishing process can be found [here](https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch).
