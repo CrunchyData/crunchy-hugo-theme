@@ -374,13 +374,13 @@ nav#TableOfContents, aside b {
     padding-right: 1.5rem;
 }
 
-nav#TableOfContents ul li, aside b {
+nav#TableOfContents div.h2, aside b {
     list-style: none;
     margin: 0.5rem 0px 0.5rem 20px;
     padding-left: 1rem;
 }
 
-nav#TableOfContents ul li ul li ul {
+nav#TableOfContents div.h1, div.h3, div.h4 {
     display: none;
 }
 
