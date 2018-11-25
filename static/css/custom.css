@@ -380,7 +380,11 @@ nav#TableOfContents div.h2, aside b {
     padding-left: 1rem;
 }
 
-nav#TableOfContents div.h1, div.h3, div.h4 {
+nav#TableOfContents div.h1,
+nav#TableOfContents div.h3,
+nav#TableOfContents div.h4,
+nav#TableOfContents div.h5,
+nav#TableOfContents div.h6 {
     display: none;
 }
 
