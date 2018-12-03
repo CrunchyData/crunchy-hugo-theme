@@ -50,6 +50,12 @@ article > aside {
     width: 25rem !important;
 }
 
+article > aside .menu {
+    line-height: 2rem;
+    list-style-type: none;
+    margin-top: 2rem !important;
+}
+
 article > aside .menu .dd-item.active > div * {
     border-bottom: none;
 }
