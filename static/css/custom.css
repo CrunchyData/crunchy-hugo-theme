@@ -78,11 +78,33 @@ article > aside {
 article > aside .menu {
     line-height: 2rem;
     list-style-type: none;
-    margin-top: 2rem !important;
+    margin: 2rem auto !important;
+    font-size: 13px;
+    width: 80%;
+}
+
+article > aside .menu .dd-item {
+    padding-left: 0;
+    margin: 0.5rem 0;
+}
+
+article > aside .menu .dd-item.active > div {
+    background-color: transparent;
 }
 
 article > aside .menu .dd-item.active > div * {
+    font-weight: 300;
     border-bottom: none;
+}
+
+article > aside .menu .dd-item div a:hover,
+article > aside .menu .dd-item div a:focus,
+article > aside .menu .dd-item div a:active,
+.dropdown-menu li:hover,
+.dropdown-menu li:focus,
+.dropdown-menu li:active {
+    background-color: transparent;
+    padding: 0 0rem;
 }
 
 article section.page h1:first-of-type {
@@ -357,9 +379,13 @@ a.github-link {
 
 /* Navigation Components */
 
+.searchbox {
+    padding: 0;
+}
+
 .searchbox input {
     border-radius: 3px;
-    margin: 1.25rem 0 0 0;
+    width: 100%;
 }
 
 select {
@@ -394,21 +420,19 @@ nav.pagination {
 
 aside b {
     margin-bottom: 0;
+    color: #0167B3;
+    font-size: 1.1rem;
 }
 
-aside hr {
-    margin: 0 2rem 1.5rem 2rem;
-}
-
-nav#TableOfContents, aside b {
-    font-size: 13px;
-    padding-right: 1.5rem;
+nav.downloads * {
+    display: inline-block;
+    margin: 0 0.5rem 0 0 !important;
 }
 
 nav#TableOfContents div.h2, aside b {
     list-style: none;
-    margin: 0.5rem 0px 0.5rem 20px;
-    padding-left: 1rem;
+    margin: 0.5rem 0px;
+    display: block;
 }
 
 nav#TableOfContents div.h1,
@@ -457,4 +481,51 @@ section ul {
 
 i.fa.fa-chevron-right, i.fa.fa-chevron-down, i.fa.fa-chevron-left {
     color: #0167B3;
+}
+
+.show {
+    display:block !important;
+}
+
+.btn-group {
+    text-align: center !important;
+    margin: 0 auto;
+}
+
+button.btn.btn-default.dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    color: #555 !important;
+    margin-bottom: 1rem;
+}
+
+button.btn.btn-default.dropdown-toggle:focus {
+    outline: none;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+ul.dropdown-menu {
+    text-align: left;
+    list-style-type: none;
+}
+
+ul.dropdown-menu li {
+    margin-bottom: 0.5rem;
+}
+
+[data-toggle="collapse"]:after {
+display: inline-block;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  transform: rotate(90deg) ;
+  transition: all linear 0.25s;
+  }
+[data-toggle="collapse"].collapsed:after {
+  transform: rotate(0deg) ;
 }
