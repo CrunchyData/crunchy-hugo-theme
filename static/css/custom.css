@@ -24,6 +24,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Fort';
+  src: url('/fonts/Fort-Medium.eot');
+  src: url('/fonts/Fort-Medium.eot?#iefix') format('embedded-opentype'), url('/fonts/Fort-Medium.woff2') format('woff2'), url('/fonts/Fort-Medium.woff') format('woff'), url('/fonts/Fort-Medium.ttf') format('truetype'), url('/fonts/Fort-Medium.svg#Fort-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
 body, h1, h2, h3, h4, h5, h6, article section.page h1:first-of-type {
     color: rgba(0,0,0,0.87);
     font-family: Fort, sans-serif;
@@ -32,7 +40,7 @@ body, h1, h2, h3, h4, h5, h6, article section.page h1:first-of-type {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 1.9rem 0 !important;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 h2 {
@@ -62,8 +70,8 @@ dd {
 }
 
 a.baselink {
-    font-weight: 900;
     font-size: 15px;
+    font-weight: 500;
     color: #0167B3;
 }
 
@@ -79,6 +87,10 @@ article section.page {
 
 article > aside {
     width: 25rem !important;
+}
+
+ul.menu b {
+    font-weight: 500;
 }
 
 article > aside .menu {
@@ -116,7 +128,6 @@ article > aside .menu .dd-item div a:active,
 article section.page h1:first-of-type {
     text-transform: none;
     color: #0167B3;
-    font-weight: 600;
     margin: 2.5rem 0 !important;
     font-size: 2.5rem;
     line-height: 3rem;
@@ -431,6 +442,11 @@ aside b {
 nav.downloads * {
     display: inline-block;
     margin: 0 0.5rem 0 0 !important;
+    cursor: pointer;
+}
+
+nav.downloads *:hover {
+    text-decoration: underline;
 }
 
 nav#TableOfContents div.h2, aside b {
