@@ -61,6 +61,12 @@ dd {
     padding: 0.5rem 0 0.5rem 2rem;
 }
 
+a.baselink {
+    font-weight: 900;
+    font-size: 15px;
+    color: #0167B3;
+}
+
 /* Article & Section */
 
 article {
@@ -173,6 +179,7 @@ header {
 header .logo * {
     font-size: 1.4rem;
     font-weight: 600;
+    height: 3rem !important;
 }
 
 header .logo a {
@@ -346,9 +353,6 @@ a.github-link {
 }
 
 @media only all and (max-width: 860px) {
-    a.baselink {
-        display: none;
-    }
 
     article > aside {
         display: none;
@@ -481,51 +485,4 @@ section ul {
 
 i.fa.fa-chevron-right, i.fa.fa-chevron-down, i.fa.fa-chevron-left {
     color: #0167B3;
-}
-
-.show {
-    display:block !important;
-}
-
-.btn-group {
-    text-align: center !important;
-    margin: 0 auto;
-}
-
-button.btn.btn-default.dropdown-toggle {
-    width: 100%;
-    text-align: left;
-    color: #555 !important;
-    margin-bottom: 1rem;
-}
-
-button.btn.btn-default.dropdown-toggle:focus {
-    outline: none;
-    background-color: white;
-    border: 1px solid #cccccc;
-}
-
-ul.dropdown-menu {
-    text-align: left;
-    list-style-type: none;
-}
-
-ul.dropdown-menu li {
-    margin-bottom: 0.5rem;
-}
-
-[data-toggle="collapse"]:after {
-display: inline-block;
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  content: "\f054";
-  transform: rotate(90deg) ;
-  transition: all linear 0.25s;
-  }
-[data-toggle="collapse"].collapsed:after {
-  transform: rotate(0deg) ;
 }
