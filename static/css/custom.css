@@ -158,7 +158,7 @@ article section.page table td.content {
 .admonitionblock.note table .title:before {
     font-family: FontAwesome;
     font-weight: normal;
-    content: "\f0f6";
+    content: "\f249";
     margin: 5px;
 }
 
