@@ -193,10 +193,6 @@ header .logo * {
     height: 3rem !important;
 }
 
-header .logo a {
-    margin-left: 1.5rem;
-}
-
 header nav.shortcuts li a:hover {
     background-color: transparent;
 }
