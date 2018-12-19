@@ -69,6 +69,11 @@ dd {
     padding: 0.5rem 0 0.5rem 2rem;
 }
 
+dd > dl > dd {
+    padding: 0;
+    margin-left: 2rem;
+}
+
 a.baselink {
     font-size: 15px;
     font-weight: 500;
