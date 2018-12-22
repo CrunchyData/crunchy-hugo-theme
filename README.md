@@ -71,28 +71,18 @@ enableGitInfo = true
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
+# Add additional URLs to the side nav here
 # [[menu.shortcuts]]
 # pre = "<h3>More</h3>"
 # name = "<i class='fa fa-github'></i> <label>Github repo</label>"
 # identifier = "ds"
-# url = "https://github.com/CrunchyData/postgres-operator"
+# url = "https://github.com/CrunchyData/your-repo"
 # weight = 10
 #
 # [[menu.shortcuts]]
 # name = "<i class='fa fa-cloud-download'></i> <label>Download</label>"
-# url = "https://github.com/CrunchyData/postgres-operator/releases/download/2.6/postgres-operator.2.6.tar.gz"
+# url = "https://github.com/CrunchyData/your-repo/releases/download/version/your-repo.2.6.tar.gz"
 # weight = 11
-#
-# [[menu.shortcuts]]
-# name = "<i class='fa fa-bookmark'></i> <label>Kubernetes Documentation</label>"
-# identifier = "kubedoc"
-# url = "https://kubernetes.io/docs/"
-# weight = 20
-#
-# [[menu.shortcuts]]
-# name = "<i class='fa fa-file'></i> <label>License</label>"
-# url = "https://github.com/CrunchyData/postgres-operator/blob/master/LICENSE.md"
-# weight = 22
 ```
 
 # Testing
