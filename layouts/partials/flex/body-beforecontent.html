@@ -1,20 +1,24 @@
-<header>
-  <div class="logo">
-    {{ partial "header.html" . }}
-  </div>
-  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
-  {{- with .Site.Menus.shortcuts}}
-    <nav class="shortcuts">
-        {{- range sort . "Weight"}}
-            <li class="" role="">
-                <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}}target="_blank"{{end}} rel="noopener">
-                  {{safeHTML .Name}}
-                </a>
-            </li>
-        {{- end}}
-    </nav>
-  {{- end}}
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  {{ partial "header.html" . }}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav mr-auto"></ul>
+  <span class="navbar-text">
+    {{- with .Site.Menus.shortcuts}}
+      <nav class="shortcuts">
+          {{- range sort . "Weight"}}
+              <li class="" role="">
+                  <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}}target="_blank"{{end}} rel="noopener">
+                    {{safeHTML .Name}}
+                  </a>
+              </li>
+          {{- end}}
+      </nav>
+    {{- end}}
+  </span>
+</nav>
+
 <article>
   <aside>
 

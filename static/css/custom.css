@@ -77,25 +77,30 @@ dd > dl > dd {
 a.baselink {
     font-size: 15px;
     font-weight: 500;
-    color: #0167B3;
+    color: #0167B3 !important;
 }
 
-/* Article & Section */
-
-article {
-    margin-top: 0;
+ul.menu a {
+    color: #000;
 }
 
-article section.page {
-    padding: 1rem 12rem;
-}
-
-article > aside {
-    width: 25rem !important;
+nav.shortcuts a {
+    margin: 0 0.5rem;
 }
 
 ul.menu b {
     font-weight: 500;
+}
+
+/* Article & Section */
+
+article section.page {
+    padding: 1rem 12rem;
+    margin-top: 3rem;
+}
+
+article > aside {
+    width: 25rem !important;
 }
 
 article > aside .menu {
@@ -185,26 +190,36 @@ section a {
 
 /* Header */
 
-header {
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top {
+    height: 70px;
+}
+
+.bg-primary {
     background-image: url("../images/home_bg.jpg");
     background-size: cover;
-    position: relative !important;
-    height: 90px !important;
 }
 
-header .logo * {
-    font-size: 1.4rem;
-    font-weight: 600;
-    height: 3rem !important;
+nav.navbar nav.shortcuts {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    list-style-type: none;
+    font-weight: 400;
 }
 
-header nav.shortcuts li a:hover {
-    background-color: transparent;
+nav.navbar nav.shortcuts *:hover {
+    text-decoration: none;
 }
 
-header nav.shortcuts li a label {
-    margin-bottom: 0rem;
-    cursor: pointer;
+span.navbar-text .fab, span.navbar-text .fas {
+    text-decoration: none;
+    margin: 0 5px;
 }
 
 /* Post Listings */
@@ -332,13 +347,14 @@ a.github-link {
 }
 
 @media only all and (max-width: 1024px) {
+
     article > aside {
         width: 20rem !important;
         padding-right: 1.5rem;
     }
 
     article section.page {
-        padding: 1rem 8rem;
+        padding: 2rem;
     }
 
     article section.page h1:first-of-type, h1 {
@@ -362,6 +378,27 @@ a.github-link {
     h5 {
         font-size: 1.1rem;
     }
+
+    #top-bar {
+        display: none;
+    }
+}
+
+@media only all and (max-width: 992px) {
+
+    button.navbar-toggler {
+        display: none;
+    }
+
+    nav.shortcuts label {
+        display: none;
+    }
+
+    span.navbar-text .fab, span.navbar-text .fas {
+        display: block;
+        font-size: 1.5rem;
+        margin: 0 0.7rem;
+    }
 }
 
 @media only all and (max-width: 860px) {
@@ -374,7 +411,7 @@ a.github-link {
     }
 
     article section.page {
-        margin: 0 1rem !important;
+        margin: 2.5rem 1rem;
         padding: 0 1rem !important;
     }
 
@@ -451,8 +488,9 @@ nav.downloads *:hover {
 }
 
 nav#TableOfContents div.h2, aside b {
-    list-style: none;
     margin: 0.5rem 0px;
+    font-size: 1rem;
+    font-weight: 300;
     display: block;
 }
 

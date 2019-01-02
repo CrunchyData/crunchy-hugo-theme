@@ -5,6 +5,6 @@
   {{ if .Site.GetPage "page" "_header.md" }}
     {{(.Site.GetPage "page" "_header.md").Content}}
   {{else}}
-    <a href="https://www.crunchydata.com/"><img alt="Crunchy Data" src="/images/logo.svg"></a>
+    <a class="navbar-brand" href="https://www.crunchydata.com/"><img alt="Crunchy Data" src="/images/logo.svg"></a>
   {{end}}
 {{end}}
