@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {{ partial "google-analytics.html" . }}
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{if .Site.Params.themeStyle}}
       {{ partial (printf "%s/head.html" .Site.Params.themeStyle) . }}
@@ -14,10 +15,10 @@
     {{else}}
       {{ partial "flex/body-beforecontent.html" . }}
     {{end}}
-    
+
     {{ block "main" . }}
     {{ end }}
-    
+
     {{if .Site.Params.themeStyle}}
       {{ partial (printf "%s/body-aftercontent.html" .Site.Params.themeStyle) . }}
     {{else}}
