@@ -372,6 +372,10 @@ a.github-link {
 
 @media only all and (max-width: 860px) {
 
+    div.toc > dl.toc > dd > dl > dt {
+        margin: 1rem 0;
+    }
+
     article > aside {
         display: none;
         width: 0 !important;
