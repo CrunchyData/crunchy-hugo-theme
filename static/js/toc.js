@@ -21,8 +21,6 @@ function htmlTableOfContents( documentRef ) {
 
         var div = documentRef.createElement( "div" );
         div.setAttribute( "class", heading.tagName.toLowerCase() );
-        if ( div.getAttribute ( "class" ) == "h2" )
-            document.getElementById('TableOfContents').innerHTML = '<b>Table of Contents</b>';
         div.appendChild( link );
         TableOfContents.appendChild( div );
     });

@@ -136,7 +136,7 @@ article > aside {
       article > aside .menu .dd-item div {
         display: flex;
         flex-direction: row; }
-        article > aside .menu .dd-item div * {
+        article > aside .menu .dd-item div *, nav#TableOfContents div.h2 {
           line-height: inherit; }
         article > aside .menu .dd-item div i.read-icon {
           display: none; }
