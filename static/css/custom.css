@@ -108,6 +108,11 @@ article > aside .menu .dd-item div a:active,
     padding: 0 0rem;
 }
 
+article > aside .menu .dd-item.haschildren > div a {
+    cursor: none;
+    pointer-events: none;
+}
+
 article section.page h1:first-of-type {
     text-transform: none;
     color: #0167B3;
