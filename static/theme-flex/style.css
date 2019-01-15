@@ -588,14 +588,6 @@ div.notices p {
   margin-top: 0rem;
   margin-bottom: 0rem; }
 
-div.notices p:first-child:before {
-  position: absolute;
-  top: -27px;
-  color: #fff;
-  font-family: FontAwesome;
-  content: '';
-  left: 10px; }
-
 div.notices p:first-child:after {
   position: absolute;
   top: -27px;
