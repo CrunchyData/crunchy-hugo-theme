@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {{ partial "google-analytics.html" . }}
+    {{ if (fileExists "layouts/partials/google-analytics.html") -}}
+        {{ partial "google-analytics.html" . }}
+    {{- end }}
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{if .Site.Params.themeStyle}}
       {{ partial (printf "%s/head.html" .Site.Params.themeStyle) . }}
