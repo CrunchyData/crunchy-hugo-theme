@@ -196,3 +196,7 @@ hugo --source=$SOURCE --destination=$DESTINATION
 ```
 
 An example of this using a [gh-pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) branch can be found [here](https://github.com/CrunchyData/crunchy-containers/tree/gh-pages). More information on the publishing process can be found [here](https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch).
+
+## Google Analytics
+
+There is an option to add specific Google Analytics code snippets. This can be done by adding in a new file (automatically ignored by GitHub, as a security precaution) called `google-analytics.html` in the `/layouts/partials` directory. This will automatically be inserted immediately after the <head> tag through the `baseof.html` file in the `/layouts/_default` directory.
