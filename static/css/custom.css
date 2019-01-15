@@ -113,6 +113,11 @@ article > aside .menu .dd-item.haschildren > div a {
     pointer-events: none;
 }
 
+article > aside .menu .dd-item li {
+    list-style-type: circle;
+    margin-left: 1rem;
+}
+
 article section.page h1:first-of-type {
     text-transform: none;
     color: #0167B3;
