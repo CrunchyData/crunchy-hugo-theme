@@ -47,14 +47,6 @@ code {
     font-size: 98%;
 }
 
-*[id]:before {
-  display: block;
-  content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
-}
-
 a.baselink {
     font-size: 15px;
     font-weight: 500;
