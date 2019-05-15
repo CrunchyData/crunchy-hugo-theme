@@ -32,16 +32,6 @@
 
 
 	<div>
-{{ $footer := print "_footer." .Lang }}
-{{ range where .Site.Pages "File.BaseFileName" $footer }}
-  {{ .Content }}
-{{else}}
-  {{ if .Site.GetPage "page" "_footer.md" }}
-    {{(.Site.GetPage "page" "_footer.md").Content}}
-  {{end}}
-{{end}}
-
-
 	</div>
 </footer>
 
