@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [2.2.2.1] - 2019-06-07
+
+### Fixed
+
+- Bugfix: The `.URL` parameter is only deprecated with regards to `.Page`, and not `.Prev` & `.Next`. 
+
 ## [2.2.2] - 2019-05-16
 
 ### Fixed
