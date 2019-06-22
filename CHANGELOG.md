@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [2.2.3] - 2019-06-22
+
+### Added
+
+- `notice` shortcodes (`tip`, `warning`, etc.) now support the ability to have both HTML and/or Markdown content render appropriately.
+
 ## [2.2.2.1] - 2019-06-07
 
 ### Fixed
