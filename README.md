@@ -58,8 +58,6 @@ title = "Your Project Name"
 [params]
 editURL = "https://github.com/CrunchyData/path/to/project"
 showVisitedLinks = false # default is false
-themeStyle = "original" # "original" or "flex" # default "flex"
-themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
 ordersectionsby = "weight" # ordersectionsby = "title"
 disableHomeIcon = false # default is false
 disableSearch = false # default is false
