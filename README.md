@@ -34,7 +34,7 @@ Download from https://github.com/CrunchyData/crunchy-hugo-theme and place the ro
 If you are working in a git project you can add the theme as a submodule:
 
 ```sh
-git submodule add https://github.com/CrunchyData/crunchy-hugo-theme
+git submodule add https://github.com/CrunchyData/crunchy-hugo-theme themes/crunchy-hugo-theme
 ```
 
 ## Step 3: Configuration
