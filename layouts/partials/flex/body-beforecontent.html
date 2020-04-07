@@ -5,17 +5,20 @@
   </button>
   <ul class="navbar-nav mr-auto"></ul>
   <span class="navbar-text">
-    {{- with .Site.Menus.shortcuts}}
-      <nav class="shortcuts">
-          {{- range sort . "Weight"}}
-              <li class="" role="">
-                  <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}}target="_blank"{{end}} rel="noopener">
-                    {{safeHTML .Name}}
-                  </a>
-              </li>
-          {{- end}}
-      </nav>
-    {{- end}}
+    <nav class="shortcuts">
+      {{- with .Site.Menus.shortcuts}}
+        {{- range sort . "Weight"}}
+            <li class="" role="">
+                <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}}target="_blank"{{end}} rel="noopener">
+                  {{safeHTML .Name}}
+                </a>
+            </li>
+        {{- end}}
+      {{- end}}
+      {{ if (fileExists "data/version.toml") -}}
+        <strong class="text-white">Version: {{.Site.Data.version.number}}</strong>
+      {{- end }}
+    </nav>
   </span>
 </nav>
 
@@ -44,7 +47,12 @@
       {{- end}}
 
       <hr>
-      <a class="baselink" href="/">{{.Site.Title}}</a>
+      <a class="baselink" href="/">
+        {{.Site.Title}} 
+        {{ if (fileExists "data/version.toml") -}}
+          ({{.Site.Data.version.number}})
+        {{- end }}
+      </a>
       <hr>
 
       {{- with .Site.Menus.downloads}}
