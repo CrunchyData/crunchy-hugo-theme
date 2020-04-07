@@ -83,6 +83,19 @@ home = [ "HTML", "RSS", "JSON"]
 # weight = 11
 ```
 
+#### Custom CSS
+
+To add a custom CSS file to your project to override or add to the global styles, in your `/hugo/data/` directory, create a new configuration file 
+named `css.toml`. The complete relative path name should resemble `/hugo/data/css.toml`.
+
+Inside `css.toml`, a single line of code should be defined:
+
+```sh
+file = "main.css"
+```
+
+where `"main.css"` is the name of the custom CSS file. The theme will automatically look for this custom CSS file **only** in the `/hugo/static/css/` directory.
+
 # Testing
 
 You can test your deployment by running the Hugo server module:

@@ -12,6 +12,11 @@
 <link href="{{"css/Fort-Fonts.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/custom.css" | relURL}}" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+{{ if (fileExists "data/css.toml") -}}
+      <link href="{{ .Site.BaseURL }}css/{{.Site.Data.css.file | relURL}}" rel="stylesheet">
+{{- end }}
+
 <script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
 <script src="{{"js/main.js" | relURL}}"></script>
