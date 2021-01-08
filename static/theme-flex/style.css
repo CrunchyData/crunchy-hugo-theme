@@ -205,6 +205,9 @@ a {
 a:focus {
   outline: 0; }
 
+b, strong {
+  font-weight: bold!important; }
+
 section ol,
 section ul {
   padding: 0 1.5rem; }
@@ -214,9 +217,6 @@ section ul {
 
 section a {
   color: #2980b9; }
-
-section strong {
-  font-weight: 500; }
 
 .nav-select {
   background: #e5e5e5;
